@@ -1,3 +1,12 @@
-{{#each model.reports as |report| }}
-  {{reports/report-show report=report }}
-{{/each}}
+<div>
+  <div>All reports:</div>
+  {{#each model.reports as |report| }}
+    {{reports/report-show report=report }}
+  {{/each}}
+</div>
+
+<div>
+  <br>
+  <div>Create new report</div>
+  {{reports/report-new}}
+</div>
