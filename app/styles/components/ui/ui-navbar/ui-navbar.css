@@ -1,0 +1,84 @@
+.uiNavbar {
+  width: 100%;
+  height: var(--size-navbar);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: height .3s;
+}
+
+
+.uiNavbar-list {
+  list-style-type: none;
+  padding: 0 10px;
+  margin: 0;
+  font-size: 0px;
+}
+
+.uiNavbar-item {
+  line-height: 50px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.uiNavbar-link:hover {
+  background-color: var(--color-light);
+}
+
+.uiNavbar-link:global(.active) {
+  background-color: var(--color-marked-shadow);
+}
+
+.uiNavbar-link {
+  height: 100%;
+  padding: 0 10px;
+  display: block;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.uiNavbar_toggle {
+  display: none;
+  margin: 10px;
+}
+
+.uiNavbar_toggle_label {
+  cursor: pointer;
+}
+
+.uiNavbar_toggle_item {
+  height: 2px;
+  width: 30px;
+  margin: 6px 0;
+  background-color: var(--color-white);
+}
+
+@media (--small-viewport) {
+  .uiNavbar {
+    flex-direction: column;
+  }
+
+  :global(#navbar:checked) ~ .uiNavbar {
+    height: 100%;
+    justify-content: flex-start;
+  }
+
+  .uiNavbar_toggle {
+    display: inline-block;
+  }
+
+  .uiNavbar-item {
+    display: block;
+  }
+
+  .uiNavbar-list:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
