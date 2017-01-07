@@ -6,20 +6,7 @@ moduleForComponent('reports/report-show', 'Integration | Component | reports/rep
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{reports/report-show}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#reports/report-show}}
-      template block text
-    {{/reports/report-show}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });
