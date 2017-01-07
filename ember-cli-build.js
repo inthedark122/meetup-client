@@ -1,10 +1,28 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var CssImport = require('postcss-import');
+var CssNext = require('postcss-cssnext');
 
-module.exports = function(defaults) {
+
+module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    cssModules: {
+      plugins: [
+        CssImport
+      ]
+    },
+    postcssOptions: {
+      compile: {
+        enabled: false
+      },
+      filter: {
+        enabled: true, // defaults to false
+        plugins: [{
+          module: CssNext
+        }]
+      }
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
